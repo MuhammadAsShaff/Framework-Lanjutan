@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>change-state-handler.html</title>
+  <title>Latihan 1</title>
   <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
@@ -19,9 +19,9 @@
   <script type="text/babel">
     class PomBensin extends React.Component {
       constructor(props) {
-        super(props); 
+        super(props);
         this.state = {
-          jenisBensin: 'pertalite',
+          jenisBensin: 'premium',
           price: 0
         };
       }
@@ -67,7 +67,7 @@
       }
     }
 
-    ReactDOM.render(<PomBensin />, document.getElementById("root"));   
+    ReactDOM.render(<PomBensin />, document.getElementById("root"));
 
   </script>
 </body>
