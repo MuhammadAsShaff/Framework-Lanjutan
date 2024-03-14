@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>change-state-handler.html</title>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+
+<body>
+  <main>
+    <div id="root">
+
+    </div>
+  </main>
+  <script type="text/babel">
+    class PomBensin extends React.Component {
+      constructor(props) {
+        super(props); 
+        this.state = {
+          jenisBensin: 'pertalite',
+          price: 0
+        };
+      }
+
+      updateName = (event) => {
+        this.setState({ jenisBensin: event.target.value });
+      }
+
+      updatePrice = (newPrice) => {
+        let formattedPrice;
+        switch (this.state.jenisBensin) {
+          case 'premium':
+            formattedPrice = newPrice * 10000;
+            break;
+          case 'pertalite':
+            formattedPrice = newPrice * 12000;
+            break;
+          case 'pertamax':
+            formattedPrice = newPrice * 15000;
+            break;
+          default:
+            formattedPrice = newPrice;
+        }
+        this.setState({ price: formattedPrice });
+      }
+
+      render() {
+        return (
+          <div>
+            <h2>Harga POM Bensin</h2>
+            <p>Jenis Bensin: {this.state.jenisBensin}</p>
+            <p>Harga: Rp {this.state.price.toLocaleString()}</p>
+            <select value={this.state.jenisBensin} onChange={this.updateName}>
+              <option value="premium">Premium</option>
+              <option value="pertalite">Pertalite</option>
+              <option value="pertamax">Pertamax</option>
+            </select>
+            <br />
+            <label htmlFor="priceInput">Masukkan harga Bensin: </label>
+            <input type="number" id="priceInput" onChange={(e) => this.updatePrice(parseInt(e.target.value))} />
+          </div>
+        );
+      }
+    }
+
+    ReactDOM.render(<PomBensin />, document.getElementById("root"));   
+
+  </script>
+</body>
+
+</html>
