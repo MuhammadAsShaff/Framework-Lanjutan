@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 function GetApiListData() {
   const [listData, setData] = useState([]);
@@ -34,25 +34,25 @@ function GetApiListData() {
       <table className="table-auto">
         <thead>
           <tr>
-            <th className="px-4 py-2">ID</th>
-            <th className="px-4 py-2">Name</th>
-            <th className="px-4 py-2">Genre</th>
-            <th className="px-4 py-2">Platform</th>
+            <th className="px-4 py-2">ID Games</th>
+            <th className="px-4 py-2">Genre Games</th>
+            <th className="px-4 py-2">Name Games</th>
             <th className="px-4 py-2">Editor's Choice</th>
             <th className="px-4 py-2">Avatar</th>
+            <th className="px-4 py-2">Platform</th>
           </tr>
         </thead>
         <tbody>
           {listData.map((game) => (
             <tr key={game.id}>
               <td className="border px-4 py-2">{game.id}</td>
-              <td className="border px-4 py-2">{game.name}</td>
               <td className="border px-4 py-2">{game.genre}</td>
-              <td className="border px-4 py-2">{game.platform}</td>
+              <td className="border px-4 py-2">{game.name}</td>
               <td className="border px-4 py-2">{game.editor_choice ? 'Yes' : 'No'}</td>
               <td className="border px-4 py-2">
                 <img src={game.avatar} alt={game.name} className="h-10 w-10 rounded-full" />
               </td>
+              <td className="border px-4 py-2">{game.platform}</td>
             </tr>
           ))}
         </tbody>
