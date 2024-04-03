@@ -19,17 +19,17 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Title />
+        {/* <Title />
         <Button label="Hallooo" />
         <FlexItems />
-        <GridTailwind />
-        <Example />
+        <GridTailwind /> */}
+        {/* <Example />
         <Example2 />
         <Example3 />
         <HookReducer />
         <HookCallback />
         <ItemList />
-        <GetApi />
+        <GetApi /> */}
         <GetApiListData />
       </header>
     </div>

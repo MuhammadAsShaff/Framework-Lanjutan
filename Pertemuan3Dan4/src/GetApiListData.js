@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function GetApiGames() {
+function GetApiListData() {
   const [listData, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -8,9 +8,7 @@ function GetApiGames() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(
-          "https://5fbc07c3c09c200016d41656.mockapi.io/api/v1/games"
-        );
+        const response = await fetch('https://5fbc07c3c09c200016d41656.mockapi.io/api/v1/games');
         const data = await response.json();
         setData(data);
         setIsLoading(false);
@@ -63,4 +61,4 @@ function GetApiGames() {
   );
 }
 
-export default GetApiGames;
+export default GetApiListData;
