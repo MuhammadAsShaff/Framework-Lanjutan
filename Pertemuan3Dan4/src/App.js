@@ -11,6 +11,8 @@ import Example3 from './HookContext';
 import HookReducer from './HookReducer';
 import HookCallback from './HookCallback';
 import ItemList from './ItemList';
+import GetApi from './GetApi';
+import GetApiListData from './GetApiListData';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
         <HookReducer />
         <HookCallback />
         <ItemList />
+        <GetApi />
+        <GetApiListData />
       </header>
     </div>
   );
